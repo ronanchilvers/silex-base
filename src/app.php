@@ -20,7 +20,7 @@ $app->register(new Rych\Silex\Provider\PlatesServiceProvider(), [
 
 // Spot2 provider
 $app->register(new Ronanchilvers\Silex\Provider\Spot2ServiceProvider(), [
-    'spot2.connections' => $app['spot.connections']
+    'spot2.connections' => $app['spot2.connections']
 ]);
 
 return $app;
