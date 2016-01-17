@@ -1,0 +1,32 @@
+{
+    "name": "ronanchilvers/client-db",
+    "description": "Simple client information repository",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Ronan Chilvers",
+            "email": "ronan@d3r.com"
+        }
+    ],
+    "require": {
+        "ronanchilvers/silex-plates-provider": "dev-master",
+        "ronanchilvers/silex-spot2-provider": "dev-master",
+        "ronanchilvers/silex-yaml-config-provider": "dev-master",
+        "silex/silex": "^1.3",
+        "symfony/console": "^3.0"
+    },
+    "require-dev": {
+        "silex/web-profiler": "^1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "App\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:ronanchilvers/silex-plates-provider.git"
+        }
+    ]
+}
