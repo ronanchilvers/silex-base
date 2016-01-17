@@ -13,4 +13,14 @@ class TestController
     {
         return $app->render('test');
     }
+
+    /**
+     * For testing errors
+     *
+     * @author Ronan Chilvers <ronan@d3r.com>
+     */
+    public function errorAction()
+    {
+        throw new \Exception('Test Exception');
+    }
 }
