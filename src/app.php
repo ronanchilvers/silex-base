@@ -4,7 +4,7 @@
 $app = new App\Application();
 
 // Add the config first
-$app['config'] = require(__DIR__ . '/../app/config/config.php');
+require(__DIR__ . '/../app/config/config.php');
 
 // Core silex providers
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
@@ -20,7 +20,7 @@ $app->register(new Rych\Silex\Provider\PlatesServiceProvider(), [
 
 // Spot2 provider
 $app->register(new Ronanchilvers\Silex\Provider\Spot2ServiceProvider(), [
-    'spot2.connections' => $app['config']['spot.connections']
+    'spot2.connections' => $app['spot.connections']
 ]);
 
 return $app;
