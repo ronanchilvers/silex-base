@@ -49,6 +49,7 @@ class ServeCommand extends Command
         $output->writeLn('<comment>Command : ' . $command . '</comment>');
 
         $process = new Process($command);
+        $process->setTimeout(null);
         $process->start();
         $process->wait(function($type, $buffer) {
             $template = (Process::ERR == $type) ? "<red>%s</red>" : "<comment>%s</comment>";
