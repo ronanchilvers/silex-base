@@ -1,7 +1,7 @@
 {
-    "name": "ronanchilvers/client-db",
-    "description": "Simple client information repository",
-    "license": "proprietary",
+    "name": "ronanchilvers/silex-base",
+    "description": "Skeleton project for silex",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ronan Chilvers",
