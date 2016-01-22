@@ -42,9 +42,12 @@ class ServeCommand extends Command
         $host     = $input->getOption('host');
         $port     = $input->getOption('port');
         $php      = trim(exec('/usr/bin/which php'));
+
         $command  = "{$php} -S {$host}:{$port} -t {$basePath}/web {$basePath}/web/index_dev.php";
+
         $output->writeLn('<info>Starting built-in web server at ' . "{$host}:{$port}</info>");
         $output->writeLn('<comment>Command : ' . $command . '</comment>');
+
         $process = new Process($command);
         $process->start();
         $process->wait(function($type, $buffer) {
