@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use App\Application;
 use Symfony\Component\Console\Command\Command as ConsoleCommand;
 
 class Command extends ConsoleCommand
