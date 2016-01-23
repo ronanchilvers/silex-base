@@ -43,7 +43,7 @@ class ServeCommand extends Command
         $port     = $input->getOption('port');
         $php      = trim(exec('/usr/bin/which php'));
 
-        $command  = "{$php} -S {$host}:{$port} -t {$basePath}/web {$basePath}/web/index_dev.php";
+        $command  = "{$php} -S {$host}:{$port} -t {$basePath}/web {$basePath}/src/server.php";
 
         $output->writeLn('<info>Starting built-in web server at ' . "{$host}:{$port}</info>");
         $output->writeLn('<comment>Command : ' . $command . '</comment>');
@@ -51,9 +51,8 @@ class ServeCommand extends Command
         $process = new Process($command);
         $process->setTimeout(null);
         $process->start();
-        $process->wait(function($type, $buffer) {
-            $template = (Process::ERR == $type) ? "<red>%s</red>" : "<comment>%s</comment>";
-            echo sprintf($template, $buffer);
+        $process->wait(function($type, $buffer) use ($output) {
+            $output->writeln(sprintf("<comment>%s</comment>", trim($buffer)));
         });
         $output->writeln('<info>Finished</info>');
     }

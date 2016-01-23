@@ -2,6 +2,7 @@
 <html>
     <head>
         <title><?= $this->section('title', 'Welcome') ?></title>
+        <link rel="stylesheet" type="text/css" href="/css/reset.css" />
 <? if (isset($stylesheets)): ?>
     <? foreach ($stylesheets as $stylesheet): ?>
         <link rel="stylesheet" type="text/css" href="<?= $stylesheet ?>">
