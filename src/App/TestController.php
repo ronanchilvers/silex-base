@@ -11,7 +11,7 @@ class TestController
      */
     public function testAction(Application $app)
     {
-        return $app->render('test');
+        return $app->render('test.html.twig');
     }
 
     /**

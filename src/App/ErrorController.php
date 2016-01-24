@@ -29,7 +29,7 @@ class ErrorController
         $plates   = $app['plates.engine'];
         $fullCode = $code;
         foreach ($this->templates as $template) {
-            $template = str_replace('{code}', $code, $template);
+            $template = str_replace('{code}', $code, $template) . '.html.twig';
             $code     = substr($code, 0, -1);
             if ($plates->exists($template)) {
                 break;

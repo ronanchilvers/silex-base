@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3c07d4077c87eb0c713538874ec3e307",
-    "content-hash": "86b9988a8f150a0e66418c37741e6718",
+    "hash": "1a82259cbb9d701870550fda6aa8e686",
+    "content-hash": "514ac7886834edfef21557f7b7e7f959",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -477,58 +477,6 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "league/plates",
-            "version": "3.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/plates.git",
-                "reference": "2d8569e9f140a70d6a05db38006926f7547cb802"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/plates/zipball/2d8569e9f140a70d6a05db38006926f7547cb802",
-                "reference": "2d8569e9f140a70d6a05db38006926f7547cb802",
-                "shasum": ""
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "~1.4.0",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Plates\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Reinink",
-                    "email": "jonathan@reinink.ca",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Plates, the native PHP template system that's fast, easy to use and easy to extend.",
-            "homepage": "http://platesphp.com",
-            "keywords": [
-                "league",
-                "package",
-                "templates",
-                "templating",
-                "views"
-            ],
-            "time": "2015-07-09 02:14:40"
-        },
-        {
             "name": "pimple/pimple",
             "version": "v1.1.1",
             "source": {
@@ -611,51 +559,6 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
-        },
-        {
-            "name": "ronanchilvers/silex-plates-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ronanchilvers/silex-plates-provider.git",
-                "reference": "214c5f0ab3a2da0fb64b02cd93cfc858011b1cda"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ronanchilvers/silex-plates-provider/zipball/214c5f0ab3a2da0fb64b02cd93cfc858011b1cda",
-                "reference": "214c5f0ab3a2da0fb64b02cd93cfc858011b1cda",
-                "shasum": ""
-            },
-            "require": {
-                "league/plates": ">1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Rych\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ryan Chouinard",
-                    "email": "rchouinard@gmail.com"
-                },
-                {
-                    "name": "Ronan Chilvers",
-                    "email": "ronan@thelittledot.com"
-                }
-            ],
-            "description": "Provides Plates template engine to Silex.",
-            "support": {
-                "source": "https://github.com/ronanchilvers/silex-plates-provider/tree/master"
-            },
-            "time": "2016-01-11 21:15:02"
         },
         {
             "name": "ronanchilvers/silex-spot2-provider",
@@ -1885,7 +1788,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ronanchilvers/silex-plates-provider": 20,
         "ronanchilvers/silex-spot2-provider": 20,
         "ronanchilvers/silex-yaml-config-provider": 20
     },
