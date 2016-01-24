@@ -2,12 +2,12 @@
 
 namespace App;
 
-use Rych\Silex\Application\PlatesTrait;
+use Silex\Application\TwigTrait;
 use Silex\Application as SilexApplication;
 
 class Application extends SilexApplication
 {
-    use PlatesTrait;
+    use TwigTrait;
 
     /**
      * Get the base path of the application
