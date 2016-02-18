@@ -1,8 +1,11 @@
-<?php 
+<?php
 
-namespace App;
+namespace App\Controller;
 
-class ErrorController
+use App\Application;
+use App\Controller;
+
+class ErrorController extends Controller
 {
     /**
      * Array of error template filenames
@@ -21,24 +24,24 @@ class ErrorController
      *
      * @author Ronan Chilvers <ronan@d3r.com>
      */
-    public function errorAction(Application $app, \Exception $ex, $code)
+    public function errorAction(\Exception $ex, $code)
     {
-        if ($app['debug']) {
+        if ($this->app()['debug']) {
             return;
         }
-        $plates   = $app['plates.engine'];
-        $fullCode = $code;
-        foreach ($this->templates as $template) {
-            $template = str_replace('{code}', $code, $template) . '.html.twig';
-            $code     = substr($code, 0, -1);
-            if ($plates->exists($template)) {
-                break;
-            }
-        };
+        // $engine   = $this->app()['twig'];
+        // $loader   = $app['twig.loader.filesystem'];
+        // $fullCode = $code;
+        // $templates = [];
+        // foreach ($this->templates as $template) {
+        //     $template    = str_replace('{code}', $code, $template) . '.html.twig';
+        //     $templates[] = $template;
+        //     $code        = substr($code, 0, -1);
+        // };
 
-        return $app->render($template, [
+        return $this->render('error/default', [
             'exception' => $ex,
-            'code'      => $fullCode
+            'code'      => $code
         ]);
     }
 }
