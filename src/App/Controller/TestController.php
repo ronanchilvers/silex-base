@@ -1,6 +1,8 @@
-<?php 
+<?php
 
-namespace App;
+namespace App\Controller;
+
+use App\Application;
 
 class TestController
 {
