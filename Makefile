@@ -3,7 +3,7 @@
 # Variables
 RESOURCES=app/resources
 APP_JS_SOURCES=$(RESOURCES)/js/global.js
-AUTOPREFIXER_CONFIG="config/autoprefixer.json"
+AUTOPREFIXER_CONFIG="app/config/autoprefixer.json"
 
 SASS=$(RESOURCES)/sass
 JS==$(RESOURCES)/js
