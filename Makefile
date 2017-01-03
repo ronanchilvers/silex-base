@@ -11,22 +11,9 @@ JS==$(RESOURCES)/js
 BIN=node_modules/.bin
 DIST=web
 DIST_CSS=$(DIST)/css/global.css
-DIST_JS=$(DIST)/javascript/global.js
+DIST_JS=$(DIST)/js/global.js
 
-# Targets
-#
-# The format goes:
-#
-#   target: list of dependencies
-#     commands to build target
-#
-# If something isn't re-compiling double-check the changed file is in the
-# target's dependencies list.
-
-# Phony targets - these are for when the target-side of a definition
-# (such as "all" below) isn't a file but instead a just label. Declaring
-# it as phony ensures that it always run, even if a file by the same name
-# exists.
+# Phony targets
 .PHONY : all clean watch
 
 # Compile the final targets
