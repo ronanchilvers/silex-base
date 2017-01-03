@@ -1,3 +1,5 @@
 /vendor/
 /var/*/*
 composer.lock
+node_modules
+.sass-cache
