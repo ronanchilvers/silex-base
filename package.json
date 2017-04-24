@@ -1,9 +1,12 @@
 {
-  "name": "silex-base",
-  "devDependencies": {
-    "autoprefixer": "x",
-    "node-sass": "x",
-    "watch": "x",
-    "postcss-cli": "x"
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-include": "^2.3.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1"
   }
 }
