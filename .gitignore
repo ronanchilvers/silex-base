@@ -1,5 +1,5 @@
-/vendor/
-/var/*/*
-composer.lock
+vendor
+var/*/*
 node_modules
 .sass-cache
+.DS_Store
