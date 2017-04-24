@@ -1,4 +1,5 @@
 <?php
+
 // Include the production config
 require(__DIR__ . '/prod.php');
 

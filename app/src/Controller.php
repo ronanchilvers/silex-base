@@ -8,7 +8,7 @@ abstract class Controller
 {
     /**
      * The application object
-     * 
+     *
      * @var App\Application
      */
     private $app;
