@@ -6,10 +6,9 @@ use App\Application;
 $app = new Application();
 
 // Core silex providers
-// $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-// $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
-// $app->register(new Silex\Provider\HttpFragmentServiceProvider());
+$app->register(new Silex\Provider\RoutingServiceProvider());
+$app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
 // Twig
 $app->register(new Silex\Provider\TwigServiceProvider(), [
