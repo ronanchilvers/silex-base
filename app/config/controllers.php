@@ -2,6 +2,7 @@
 
 use App\Controller\ErrorController;
 use App\Controller\TestController;
+use Symfony\Component\HttpFoundation\Request;
 
 // Test controlle
 $app['controller.test'] = function () use ($app) {
@@ -16,6 +17,6 @@ $app['controller.error'] = function () use ($app) {
     return new ErrorController($app);
 };
 // $app->error("controller.error:errorAction");
-$app->error(function (\Exception $ex, $code) use ($app) {
-    return $app['controller.error']->errorAction($ex, $code);
+$app->error(function (\Exception $ex, Request $request, $code) use ($app) {
+    return $app['controller.error']->errorAction($ex, $request, $code);
 });

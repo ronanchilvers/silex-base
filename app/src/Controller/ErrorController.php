@@ -3,44 +3,34 @@
 namespace App\Controller;
 
 use App\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ErrorController extends Controller
 {
-    /**
-     * Array of error template filenames
-     *
-     * @var string[]
-     */
-    protected $templates = [
-        'error/{code}',
-        'error/{code}X',
-        'error/{code}XX',
-        'error/default',
-    ];
-
     /**
      * Test index action
      *
      * @author Ronan Chilvers <ronan@d3r.com>
      */
-    public function errorAction(\Exception $ex, $code)
+    public function errorAction(\Exception $ex, Request $request, $code)
     {
         if ($this->app()['debug']) {
             return;
         }
-        // $engine   = $this->app()['twig'];
-        // $loader   = $app['twig.loader.filesystem'];
-        // $fullCode = $code;
-        // $templates = [];
-        // foreach ($this->templates as $template) {
-        //     $template    = str_replace('{code}', $code, $template) . '.html.twig';
-        //     $templates[] = $template;
-        //     $code        = substr($code, 0, -1);
-        // };
+        $engine   = $this->app()['twig'];
+        $templates = [
+            'error/'.$code.'.html.twig',
+            'error/'.substr($code, 0, 2).'X.html.twig',
+            'error/'.substr($code, 0, 1).'XX.html.twig',
+            'error/default.html.twig',
+        ];
 
-        return $this->render('error/default', [
-            'exception' => $ex,
-            'code'      => $code
-        ]);
+        return new Response(
+            $this->app()['twig']
+                ->resolveTemplate($templates)
+                ->render(['exception' => $ex, 'code' => $code]),
+            $code
+        );
     }
 }
