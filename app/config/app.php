@@ -15,4 +15,13 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__ . '/../views'
 ]);
 
+// Controller annotations
+$app->register(new DDesrosiers\SilexAnnotations\AnnotationServiceProvider(), array(
+    'annot.cache' => new Doctrine\Common\Cache\FilesystemCache(
+        __DIR__ . '/../../var/cache/annotations'
+    ),
+    'annot.controllerDir' => __DIR__ . '/../src/Controller',
+    'annot.controllerNamespace' => 'App\\Controller\\'
+));
+
 return $app;
