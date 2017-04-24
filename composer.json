@@ -14,6 +14,8 @@
         "symfony/twig-bridge": "^3.2"
     },
     "require-dev": {
+        "silex/web-profiler": "^2.0",
+        "symfony/var-dumper": "^3.2"
     },
     "autoload": {
         "psr-4": {
