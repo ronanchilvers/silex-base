@@ -2,14 +2,13 @@
 
 namespace App\Controller;
 
-use App\Application;
 use App\Controller;
 
 class ErrorController extends Controller
 {
     /**
      * Array of error template filenames
-     * 
+     *
      * @var string[]
      */
     protected $templates = [

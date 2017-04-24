@@ -2,18 +2,18 @@
 
 namespace App\Controller;
 
-use App\Application;
+use App\Controller;
 
-class TestController
+class TestController extends Controller
 {
     /**
      * Test index action
      *
      * @author Ronan Chilvers <ronan@d3r.com>
      */
-    public function testAction(Application $app)
+    public function testAction()
     {
-        return $app->render('test.html.twig');
+        return $this->render('test/index');
     }
 
     /**

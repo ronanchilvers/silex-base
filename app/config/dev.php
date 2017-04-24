@@ -6,6 +6,6 @@ require(__DIR__ . '/prod.php');
 $app['debug'] = true;
 
 // Add web profiler
-$app->register(new Silex\Provider\WebProfilerServiceProvider(), [
-    'profiler.cache_dir' => __DIR__.'/../../var/cache/profiler',
-]);
+// $app->register(new Silex\Provider\WebProfilerServiceProvider(), [
+//     'profiler.cache_dir' => __DIR__.'/../../var/cache/profiler',
+// ]);
