@@ -27,4 +27,11 @@ $app->register(new DDesrosiers\SilexAnnotations\AnnotationServiceProvider(), arr
     'annot.controllerNamespace' => 'App\\Controller\\'
 ));
 
+// Spot2
+$app->register(new \Ronanchilvers\Silex\Provider\Spot2ServiceProvider(), [
+    'spot2.connections' => [
+        'default' => 'sqlite://' . __DIR__ . '/../../var/data/database.sqlite'
+    ]
+]);
+
 return $app;

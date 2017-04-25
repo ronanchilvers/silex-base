@@ -12,7 +12,8 @@
         "silex/silex": "^2.0",
         "symfony/console": "^3.0",
         "symfony/twig-bridge": "^3.2",
-        "ddesrosiers/silex-annotation-provider": "^2.0"
+        "ddesrosiers/silex-annotation-provider": "^2.0",
+        "ronanchilvers/silex-spot2-provider": "dev-master"
     },
     "require-dev": {
         "silex/web-profiler": "^2.0",
