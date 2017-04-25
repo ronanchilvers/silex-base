@@ -9,6 +9,9 @@ $app = new Application();
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\RoutingServiceProvider());
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
+$app->register(new Silex\Provider\MonologServiceProvider(), [
+    'monolog.logfile' => __DIR__ . '/../../var/log/application.log'
+]);
 
 // Twig
 $app->register(new Silex\Provider\TwigServiceProvider(), [
