@@ -100,7 +100,7 @@ yarn install
 ```
 
 [silex]: https://github.com/silexphp/Silex
-[silex-skeleton]: https://github.com/silexphp/Silex-Skeleton
+[silex skeleton]: https://github.com/silexphp/Silex-Skeleton
 [ServiceControllerServiceProvider]: https://silex.sensiolabs.org/doc/2.0/providers/service_controller.html
 [RoutingServiceProvider]: https://github.com/silexphp/Silex-Providers/blob/master/RoutingServiceProvider.php
 [HttpFragmentServiceProvider]: https://silex.sensiolabs.org/doc/2.0/providers/http_fragment.html
