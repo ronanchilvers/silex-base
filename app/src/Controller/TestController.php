@@ -19,9 +19,6 @@ class TestController extends Controller
      */
     public function testAction()
     {
-        $db = $this->app()['spot2.locator'];
-        // @TODO Remove var_dump
-        var_dump($db); exit();
         return $this->render('test/index');
     }
 
