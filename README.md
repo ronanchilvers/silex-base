@@ -79,9 +79,10 @@ The following providers are enabled by default:
 
  - [ServiceControllerServiceProvider] - allows registering controllers as services
  - [RoutingServiceProvider] - routing component provider, enabling url generation
+ - [SessionServiceProvider] - enables session handling
  - [MonologServiceProvider] - integrate monolog logging with a default application log in var/log/application.log
  - [WebProfilerServiceProvider] - (dev only) turns on the symfony web profiler / debug bar
- - [TwigServiceProvider] - twig engine integration 
+ - [TwigServiceProvider] - twig engine integration
  - [HttpFragmentServiceProvider] - enables http fragment handling, required by the web profiler component
 
 ### Third party providers
@@ -89,7 +90,7 @@ The following providers are enabled by default:
  - [AnnotationServiceProvider] - allows the use of annotations in controllers for routing
  - [Spot2ServiceProvider] - enables the Spot2 data mapper with a default sqlite database in var/data/database.sqlite
 
- 
+
 ## Frontend resources
 
 The base project is configured to use gulp for compiling frontend resources stored in app/resources. We recommend using [yarn] instead of npm for a more pleasant experience all round. (You'll need [nodejs] installed to run this stuff at all - version 6.9.X seems to work). You can run it by doing:
