@@ -48,17 +48,17 @@ Here's a description of the main components of the project and what they are.
     - resources
         - js - javascript source files
         - sass - SASS source files with some default components
-    - src - the php source code for the application, configured as PSR-4 in the App namespace
-        - Controller - the application controllers. This directory is searched by the annotations service for routes
-            - ErrorController.php - Standard error controller
-            - TestController.php - Test controller. Can be removed.
-        - Application.php - Base application subclass with some traits added
-        - Controller.php - Base controller class with some useful shortcuts
     - views - The application views. The Twig service provider is configured to look in here for its views.
         - error - Error handling templates
         - test - test controller templates. Can be removed.
 - bin
     - console - CLI console script
+- src - the php source code for the application, configured as PSR-4 in the App namespace
+    - Controller - the application controllers. This directory is searched by the annotations service for routes
+        - ErrorController.php - Standard error controller
+        - TestController.php - Test controller. Can be removed.
+    - Application.php - Base application subclass with some traits added
+    - Controller.php - Base controller class with some useful shortcuts
 - var
     - cache - Cache directory for annotations, web profiler, etc
     - data - Data directory holding the base sqlite database by default
