@@ -22,7 +22,13 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/src/"
+            "App\\": "src/"
         }
+    },
+    "scripts": {
+        "serve": [
+            "echo 'Starting development server on http://localhost:9000'",
+            "php -S localhost:9000 -t web web/index_dev.php"
+        ]
     }
 }

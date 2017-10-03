@@ -24,15 +24,15 @@ $app->register(new DDesrosiers\SilexAnnotations\AnnotationServiceProvider(), arr
     'annot.cache' => new Doctrine\Common\Cache\FilesystemCache(
         __DIR__ . '/../../var/cache/annotations'
     ),
-    'annot.controllerDir' => __DIR__ . '/../src/Controller',
+    'annot.controllerDir' => __DIR__ . '/../../src/Controller',
     'annot.controllerNamespace' => 'App\\Controller\\'
 ));
 
 // Spot2
-$app->register(new \Ronanchilvers\Silex\Provider\Spot2ServiceProvider(), [
-    'spot2.connections' => [
-        'default' => 'sqlite://' . __DIR__ . '/../../var/data/database.sqlite'
-    ]
-]);
+// $app->register(new \Ronanchilvers\Silex\Provider\Spot2ServiceProvider(), [
+//     'spot2.connections' => [
+//         'default' => 'sqlite://' . __DIR__ . '/../../var/data/database.sqlite'
+//     ]
+// ]);
 
 return $app;
