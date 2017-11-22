@@ -6,8 +6,13 @@ $breakpoints: (
     tablet-portrait: "max-width: 768px",
     mobile: "max-width: 500px"
 );
+$sizes: (
+    xl: false,
+    l: desktop,
+    t: tablet,
+    tp: tablet-portrait,
+    m: mobile,
+);
 
 $page-margin: 15px;
-
-$base-px: 18px;
-
+$base-px: 16px;
