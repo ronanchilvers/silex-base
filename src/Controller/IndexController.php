@@ -9,17 +9,20 @@ use DDesrosiers\SilexAnnotations\Annotations as SLX;
  * @SLX\Controller
  * @author Ronan Chilvers <ronan@d3r.com>
  */
-class TestController extends Controller
+class IndexController extends Controller
 {
     /**
-     * Test index action
+     * Index action
      *
-     * @SLX\Request(method="GET", uri="/")
+     * @SLX\Route(
+     *   @SLX\Request(method="GET", uri="/"),
+     *   @SLX\Bind(routeName="home")
+     * )
      * @author Ronan Chilvers <ronan@d3r.com>
      */
-    public function testAction()
+    public function indexAction()
     {
-        return $this->render('test/index');
+        return $this->render('index/index');
     }
 
     /**
