@@ -25,6 +25,9 @@
             "App\\": "src/"
         }
     },
+    "config": {
+        "process-timeout" : 0
+    },
     "scripts": {
         "serve": [
             "echo 'Starting development server on http://localhost:9000'",
