@@ -5,6 +5,8 @@ use App\Controller\TestController;
 use Symfony\Component\HttpFoundation\Request;
 
 // ****************************************************************
+$app['debug'] = false;
+
 // Error controller
 $app['controller.error'] = function () use ($app) {
     return new ErrorController($app);

@@ -1,16 +1,15 @@
 #!/usr/bin/env php
 <?php
-
 require_once __DIR__.'/../vendor/autoload.php';
-
+$bootstrapFilePath = __DIR__.'/../app/config/app.php';
 set_time_limit(0);
-
-use Symfony\Component\Console\Input\ArgvInput;
-
-$input   = new ArgvInput();
-$env     = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
-
-$app     = require __DIR__.'/../app/config/app.php';
-require __DIR__.'/../app/config/'.$env.'.php';
-$console = require __DIR__.'/../app/config/console.php';
+$app = require $bootstrapFilePath;
+if (!$app instanceof Silex\Application) {
+    throw new LogicException(sprintf('The bootstrap file %s must return an instance of Silex\Application.', $bootstrapFilePath));
+}
+if (!isset($app['console'])) {
+    throw new LogicException('The console service does not exist. Did you forget to register Knp\Provider\ConsoleServiceProvider ?');
+}
+$console = $app['console'];
+require __DIR__ . '/../app/config/console.php';
 $console->run();

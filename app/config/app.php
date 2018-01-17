@@ -5,10 +5,29 @@ use App\Application;
 // Create new app
 $app = new Application();
 
+// Constants
+$app['app_root'] = __DIR__ . '/../..';
+$app['app_var'] = $app['app_root'] . '/var';
+$app['app_web'] = $app['app_root'] . '/web';
+
+// Include configuration
+$configFile = $app['app_root'] . '/local.config.php';
+if (!file_exists($configFile)) {
+    throw new LogicException('Missing local configuration at ' . $configFile);
+}
+$app['config'] = require_once($configFile);
+
 // Core silex providers
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\RoutingServiceProvider());
-$app->register(new Silex\Provider\SessionServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider(),[
+    'session.storage.save_path' => $app['app_var'] . '/sessions',
+    'session.storage.options' => [
+        'gc_maxlifetime' => 86400,
+        'cookie_secure' => true,
+        'cookie_httponly' => true,
+    ]
+);
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), [
     'monolog.logfile' => __DIR__ . '/../../var/log/application.log'
@@ -34,5 +53,8 @@ $app->register(new Ronanchilvers\Silex\Spot2\Provider\Spot2ServiceProvider(), [
         'default' => 'sqlite://' . __DIR__ . '/../../var/data/database.sqlite'
     ]
 ]);
+
+// Knp Console
+$app->register(new Knp\Provider\ConsoleServiceProvider());
 
 return $app;

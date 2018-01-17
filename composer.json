@@ -14,7 +14,8 @@
         "symfony/twig-bridge": "^3.2",
         "ddesrosiers/silex-annotation-provider": "^2.0",
         "monolog/monolog": "^1.22",
-        "ronanchilvers/silex-spot2-provider": "dev-master"
+        "ronanchilvers/silex-spot2-provider": "dev-master",
+        "knplabs/console-service-provider": "^2.1"
     },
     "require-dev": {
         "silex/web-profiler": "^2.0",
