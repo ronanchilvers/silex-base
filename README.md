@@ -69,7 +69,14 @@ Here's a description of the main components of the project and what they are.
     - index.php - Production bootstrap
     - index_dev.php - Development bootstrap
 - deploy.php.dist - A sample deployment recipe for use with [deployer]
+- local.config.php.dist - A sample local config file
 - gulpfile.js - The default gulpfile recipe for the project
+
+## Configuration
+
+For configuring arbitrary parameters for a specific deployment of your codebase you should use a local.config.php file which returns an array of config variables. This array is available on the ```$app``` object as ```$app['config']```. The config file should *not* be stored in version control.
+
+To add providers and configure the structure of the framework you should use the ```app/config/(aap|dev|prod).php``` files. However these are *not* intended to allow per environment configuration such as different database connections, etc. That's the job of the local.config.php file.
 
 ## Providers
 
@@ -77,19 +84,19 @@ The following providers are enabled by default:
 
 ### Silex core / official providers
 
- - [ServiceControllerServiceProvider] - allows registering controllers as services
- - [RoutingServiceProvider] - routing component provider, enabling url generation
- - [SessionServiceProvider] - enables session handling
- - [MonologServiceProvider] - integrate monolog logging with a default application log in var/log/application.log
- - [WebProfilerServiceProvider] - (dev only) turns on the symfony web profiler / debug bar
- - [TwigServiceProvider] - twig engine integration
  - [HttpFragmentServiceProvider] - enables http fragment handling, required by the web profiler component
+ - [MonologServiceProvider] - integrate monolog logging with a default application log in var/log/application.log
+ - [RoutingServiceProvider] - routing component provider, enabling url generation
+ - [ServiceControllerServiceProvider] - allows registering controllers as services
+ - [SessionServiceProvider] - enables session handling
+ - [TwigServiceProvider] - twig engine integration
+ - [WebProfilerServiceProvider] - (dev only) turns on the symfony web profiler / debug bar
 
 ### Third party providers
 
  - [AnnotationServiceProvider] - allows the use of annotations in controllers for routing
  - [Spot2ServiceProvider] - enables the Spot2 data mapper with a default sqlite database in var/data/database.sqlite
-
+ - [ConsoleServiceProvider] - KNP Labs console provider for Silex which eases access to the silex application object from console commands
 
 ## Frontend resources
 
@@ -110,6 +117,7 @@ yarn install
 [AnnotationServiceProvider]: https://github.com/danadesrosiers/silex-annotation-provider
 [Spot2ServiceProvider]: https://github.com/ronanchilvers/silex-spot2-provider
 [WebProfilerServiceProvider]: https://github.com/silexphp/Silex-WebProfiler
+[SessionServiceProvider]: https://silex.symfony.com/doc/2.0/providers/session.html
 [yarn]: https://yarnpkg.com
 [nodejs]: https://nodejs.org
 [deployer]: https://deployer.org
