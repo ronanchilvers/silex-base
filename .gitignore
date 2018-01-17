@@ -1,6 +1,7 @@
-vendor
+/vendor/
 var/*/*
 node_modules
 .sass-cache
 .DS_Store
 *.sublime-*
+local.config.php
