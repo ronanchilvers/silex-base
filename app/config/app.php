@@ -27,7 +27,7 @@ $app->register(new Silex\Provider\SessionServiceProvider(),[
         'cookie_secure' => true,
         'cookie_httponly' => true,
     ]
-);
+]);
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), [
     'monolog.logfile' => __DIR__ . '/../../var/log/application.log'
