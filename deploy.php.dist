@@ -3,15 +3,57 @@
 namespace Deployer;
 
 require 'recipe/composer.php';
+require __DIR__ .'/vendor/deployer/recipes/recipe/cachetool.php';
 
-set('repository', 'CHANGEME');
+set('repository', '<CHANGE ME>');
 set('shared_dirs', [
-    'var'
+    'var/cache/annotations',
+    'var/log',
+    'var/sessions',
 ]);
-after('deploy:vendors', 'deploy:shared');
-server('production', 'CHANGEME')
-    ->forwardAgent()
-    ->user('CHANGEME')
-    ->set('deploy_path', 'CHANGEME')
+set('shared_files', [
+    'local.config.php',
+]);
+set('writable_dirs', [
+    'var/cache/annotations',
+    'var/log',
+    'var/sessions',
+]);
+set('clear_paths', [
+    'app/resources',
+    'deploy.php',
+    'deploy.php.dist',
+    'gulpfile.js',
+    'LICENSE',
+    'local.php.dist',
+    'package.json',
+    'README.md',
+    'web/index_dev.php',
+    'yarn.lock',
+]);
+set('writable_mode', 'chmod');
+set('writable_chmod_mode', '0775');
+set('writable_chmod_recursive', false);
+set('ssh_multiplexing', false);
+
+task('deploy', [
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:vendors',
+    'deploy:shared',
+    'deploy:writable',
+    'deploy:clear_paths',
+    'deploy:symlink',
+    'cachetool:clear:opcache',
+    'deploy:unlock',
+    'cleanup',
+    'success'
+]);
+
+host('<CHANGE ME>')
+    ->set('deploy_path', '<CHANGE ME>')
+    ->set('cachetool', '<CHANGE ME : /run/php/php7.0-fpm.sock>')
     ->stage('production')
     ;
