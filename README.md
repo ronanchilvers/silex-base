@@ -76,7 +76,7 @@ Here's a description of the main components of the project and what they are.
 
 For configuring arbitrary parameters for a specific deployment of your codebase you should use a local.config.php file which returns an array of config variables. This array is available on the ```$app``` object as ```$app['config']```. The config file should *not* be stored in version control.
 
-To add providers and configure the structure of the framework you should use the ```app/config/(aap|dev|prod).php``` files. However these are *not* intended to allow per environment configuration such as different database connections, etc. That's the job of the local.config.php file.
+To add providers and configure the structure of the framework you should use the ```app/config/(app|dev|prod).php``` files. However these are *not* intended to allow per environment configuration such as different database connections, etc. That's the job of the local.config.php file.
 
 ## Providers
 
