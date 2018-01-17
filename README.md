@@ -118,6 +118,7 @@ yarn install
 [Spot2ServiceProvider]: https://github.com/ronanchilvers/silex-spot2-provider
 [WebProfilerServiceProvider]: https://github.com/silexphp/Silex-WebProfiler
 [SessionServiceProvider]: https://silex.symfony.com/doc/2.0/providers/session.html
+[ConsoleServiceProvider]: https://github.com/KnpLabs/ConsoleServiceProvider
 [yarn]: https://yarnpkg.com
 [nodejs]: https://nodejs.org
 [deployer]: https://deployer.org
