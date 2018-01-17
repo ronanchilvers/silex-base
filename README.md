@@ -23,17 +23,19 @@ Currently the project is not in packagist so you'll probably need to add the rep
 }
 ```
 
-Once composer finishes you should have a checked out and composed copy of the project ready to run. To view the test page do:
+Then create a local config stub file bby changing into the working copy root and doing:
 
 ```bash
-php -S localhost:9000 -t web
+cp local.config.php.dist local.config.php
 ```
 
-To run in dev mode do:
+You should now have a project ready to run. To view the test page do:
 
 ```bash
-php -S localhost:9000 -t web web/index_dev.php
+composer serve
 ```
+
+This will run the site in dev mode using the builtin php web server.
 
 ## Filesystem Layout
 
